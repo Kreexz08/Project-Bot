@@ -1,4 +1,6 @@
-# BOT DE TELEGRAM DE CONSULTAS KOLBI CON PAGINA WEB PARA ENCENDERLO Y APAGARLO Y AUTORIZAR USUARIOS
+# BOT DE TELEGRAM CON PAGINA WEB PARA CONTROLARLO
+
+### Este proyecto es un bot de telegram el cual puede ser controlado mediante una pagina web, creada con flask
 
 ## Index para controlar el bot
 ![Captura control](https://github.com/user-attachments/assets/dfe59668-0803-49a3-870b-5b71d98cbaa9)
