@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Bot Runner</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-10 rounded-lg shadow-lg w-full max-w-3xl">
+        <h1 class="text-4xl font-bold text-center mb-8 text-gray-800">Controlar el Bot de Telegram</h1>
+
+        {% if mensaje %}
+            <div class="mb-6 p-4 rounded-lg text-white {{ 'bg-green-500' if tipo_mensaje == 'success' else ('bg-red-500' if tipo_mensaje == 'error' else 'bg-blue-500') }}">
+                {{ mensaje }}
+            </div>
+        {% endif %}
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <form action="{{ url_for('start_bot') }}" method="get" class="flex justify-center">
+                <button type="submit" class="w-full bg-blue-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition duration-300 text-lg font-semibold">
+                    Iniciar Bot
+                </button>
+            </form>
+            <form action="{{ url_for('stop_bot') }}" method="get" class="flex justify-center">
+                <button type="submit" class="w-full bg-red-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75 transition duration-300 text-lg font-semibold">
+                    Detener Bot
+                </button>
+            </form>
+        </div>
+
+        <br>
+
+        <div class="flex justify-center">
+            <a href="{{ url_for('usuarios') }}" class="bg-green-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition duration-300 text-lg font-semibold">
+                Gestionar Usuarios Permitidos
+            </a>
+        </div>
+    </div>
+</body>
+</html>
